@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor Hugo Zanella Dias - Trabalho Prático</title>
+    <style>
+
+        body {
+            background-color: #f5f7fa;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #e74c3c;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+            text-align: justify;
+            color: #2c3e50;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        ul {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #2c3e50;
+            list-style-type: none;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        ul li:before {
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+
+        ul li:nth-child(1):before {
+            content: "🚴";
+        }
+
+        ul li:nth-child(2):before {
+            content: "📚";
+        }
+
+        ul li:nth-child(3):before {
+            content: "🥋";
+            color: #e74c3c; 
+        }
+
+        img {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            display: block;
+            margin: 20px auto;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ecf0f1;
+            color: #2c3e50;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #e3f2fd;
+        }
+
+        a {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 12px 25px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .btn-interativo {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .btn-interativo:hover {
+            background-color: #229954;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        .mensagem {
+            background-color: #f39c12;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 500px;
+            font-size: 1.2em;
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Victor Hugo Zanella Dias</h1>
+        <p>Meu nome é Victor Hugo Zanella Dias, tenho 39 anos e moro em Curitiba. Sou um estudante de Análise e Desenvolvimento de Sistemas na Uninter, me considero um apaixonado por programação, especialmente em Python, e tenho interesse em Inteligência Artificial e Machine Learning. Além disso, sou um entusiasta em explorar novas tecnologias. Pratico Jiu-jitsu há pelos 4 anos sendo um esporte que eu adoro.</p>
+
+        <button class="btn-interativo" onclick="mostrarMensagem()">Clique para ver uma mensagem!</button>
+        
+        <div id="mensagem" class="mensagem"></div>
+
+        <h2>Hobbies</h2>
+        <ul>
+            <li>Andar de Bicicleta</li>
+            <li>Estudar novas tecnologias</li>
+            <li>Jiu-jitsu</li>
+        </ul>
+
+        <h2>Meu Hobbie preferido</h2>
+        <img src="jujitsu.jpeg" alt="jiu-jitsu" width="300" height="200">
+
+        <h2>Países que Desejo visitar</h2>
+        <table>
+            <tr>
+                <th>País</th>
+                <th>Foto</th>
+            </tr>
+            <tr>
+                <td>Inglaterra</td>
+                <td><img src="inglaterra.png" alt="Inglaterra" width="100" height="100"></td>
+            </tr>
+            <tr>
+                <td>França</td>
+                <td><img src="franca.png" alt="França" width="100" height="100"></td>
+            </tr>
+            <tr>
+                <td>Estados Unidos</td>
+                <td><img src="eua.png" alt="Estados Unidos" width="100" height="100"></td>
+            </tr>
+        </table>
+        
+        <h3>Site que mais utilizo: <a href="https://www.youtube.com/">Visite o YouTube</a></h3>
+    </div>
+
+    <script>
+
+        function mostrarMensagem() {
+            const mensagemDiv = document.getElementById('mensagem');
+            const mensagens = [
+                "🚀 Continue perseguindo seus sonhos! A programação é uma jornada incrível!",
+                "🥋 Assim como no Jiu-jitsu, na programação a persistência é a chave do sucesso!",
+                "🌟 Cada linha de código que você escreve te aproxima dos seus objetivos!",
+                "💪 Victor, você está no caminho certo! Continue estudando e evoluindo!",
+                "🎯 A combinação de disciplina do Jiu-jitsu com paixão pela tecnologia te levará longe!"
+            ];
+            
+            const mensagemAleatoria = mensagens[Math.floor(Math.random() * mensagens.length)];
+            
+            mensagemDiv.textContent = mensagemAleatoria;
+            mensagemDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                mensagemDiv.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
